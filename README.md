@@ -2,8 +2,6 @@
 
 **ORCA Engine** is a lightweight, interactive command-line environment written in Python. It offers a playful yet functional shell experience with colorful output, splash text, and a variety of built-in commands for file handling, time display, system info, calculations, and more.
 
-> 🎉 _"Only $0.00!" — Random Splash Text Generator_
-
 ---
 
 ## ✨ Features
