@@ -1,4 +1,5 @@
 # ORCA Engine - Vanilla
+import random
 import time
 import os
 import multiprocessing
@@ -7,6 +8,16 @@ from datetime import datetime
 import pytz
 import re
 import requests
+
+# Splash Text
+text_options = [
+    "Hello, world!",
+    "Only $0.00!",
+    "Look Mum, I'm a Splash!",
+    "Better than Yasiftc!",
+    "This is a randomly chosen message."
+]
+
 
 start_time = time.time()
 
@@ -19,12 +30,15 @@ def color_text(text):
     return text
 
 def show_info():
+    selected_text = random.choice(text_options)
+
     banner = [
         r"   ____  ____  _________ ",
         r"  / __ \/ __ \/ ____/   |",
         r" / / / / /_/ / /   / /| |",
         r"/ /_/ / _  _/ /___/ ___ |",
         r"\____/_/ |_|\____/_/  |_|",
+        f" {selected_text}",
         r"                          "
     ]
 
@@ -43,12 +57,10 @@ def show_info():
 
     max_banner_width = max(len(line) for line in banner) + 10
 
-    for i in range(len(banner)):
-        left = "\033[95m" + banner[i] + "\033[0m"
+    for i in range(max(len(banner), len(sys_info))):
+        left = "\033[95m" + (banner[i] if i < len(banner) else "") + "\033[0m"
         right = sys_info[i] if i < len(sys_info) else ""
         print(f"{left.ljust(max_banner_width)}{right}")
-
-    print("")
 
 def main():
     print(color_orca("Welcome to ORCA"))
