@@ -11,14 +11,18 @@ import requests
 
 # Splash Text
 text_options = [
-    "Hello, world!",
+    "Hello, World!",
     "Only $0.00!",
     "Look Mum, I'm a Splash!",
     "Better than Yasiftc!",
-    "This is a randomly chosen message."
+    "This is a randomly chosen splash.",
+    "Call me maybe!",
+    "New and Improved!",
+    "Merry Tuesday!",
+    "Removed Herobrine.",
+    "100% Bug-Free!",
+    "Might be Malware..."
 ]
-
-
 start_time = time.time()
 
 def color_orca(text):
@@ -31,6 +35,7 @@ def color_text(text):
 
 def show_info():
     selected_text = random.choice(text_options)
+    yellow_text = f"\033[93m{selected_text}\033[0m"
 
     banner = [
         r"   ____  ____  _________ ",
@@ -38,7 +43,7 @@ def show_info():
         r" / / / / /_/ / /   / /| |",
         r"/ /_/ / _  _/ /___/ ___ |",
         r"\____/_/ |_|\____/_/  |_|",
-        f" {selected_text}",
+        f"{yellow_text}",
         r"                          "
     ]
 
@@ -77,6 +82,7 @@ def main():
             continue
 
         if command.lower() == "help":
+            print("--------------------------------")
             print(color_orca("ORCA Help Menu"))
             print("--------------------------------")
             print(color_orca("echo") + "    - Repeat given text")
